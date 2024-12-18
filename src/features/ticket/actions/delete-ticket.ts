@@ -1,11 +1,15 @@
 "use server";
 
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { ticketsPath } from "@/paths";
 
 export const deleteTicket = async (ticketId: string) => {
-  return prisma.ticket.delete({
+  await prisma.ticket.delete({
     where: {
       id: ticketId,
     },
   });
+
+  return redirect(ticketsPath());
 };
