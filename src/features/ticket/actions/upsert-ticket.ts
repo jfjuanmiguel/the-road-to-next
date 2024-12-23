@@ -34,7 +34,6 @@ export const upsertTicket = async (
       create: data,
     });
   } catch (error) {
-    console.error(error);
     return fromErrorToActionState(error, formData);
   }
 
@@ -44,5 +43,5 @@ export const upsertTicket = async (
     redirect(ticketPath(id));
   }
 
-  return { message: "Ticket created" };
+  return { message: "Ticket created", fieldErrors: {} };
 };
