@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Toaster } from "sonner";
 import { Header } from "@/components/header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
           >
             {children}
           </main>
+          <Toaster expand />
         </ThemeProvider>
       </body>
     </html>
