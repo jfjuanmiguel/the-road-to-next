@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Toaster } from "sonner";
 import { Header } from "@/components/header";
+import { RedirectToast } from "@/components/redirect-toast";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
 const geistSans = localFont({
@@ -45,6 +46,7 @@ export default function RootLayout({
             {children}
           </main>
           <Toaster expand />
+          <RedirectToast />
         </ThemeProvider>
       </body>
     </html>
