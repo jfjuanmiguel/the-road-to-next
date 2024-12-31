@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/card";
 import { deleteTicket } from "@/features/ticket/actions/delete-ticket";
 import { ticketEditPath, ticketPath } from "@/paths";
+import { toCurrencyFormatCent } from "@/utils/currency";
 import { TICKET_ICONS } from "../constants";
 
 type TicketItemProps = {
@@ -73,7 +74,9 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
         </CardContent>
         <CardFooter className="flex justify-between">
           <p className="text-sm text-muted-foreground">{ticket.deadline}</p>
-          <p className="text-sm text-muted-foreground">{ticket.bounty}</p>
+          <p className="text-sm text-muted-foreground">
+            {toCurrencyFormatCent(ticket.bounty)}
+          </p>
         </CardFooter>
       </Card>
 
