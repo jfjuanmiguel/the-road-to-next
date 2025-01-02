@@ -23,8 +23,13 @@ const TicketUpsertForm = ({ ticket }: TicketUpsertFormProps) => {
     EMPTY_ACTION_STATE,
   );
 
+  const handleSuccess = () => {
+    // TODO reset the date picker
+    console.log("success");
+  };
+
   return (
-    <Form action={action} actionState={actionState}>
+    <Form action={action} actionState={actionState} onSuccess={handleSuccess}>
       <Label htmlFor="title">Title</Label>
       <Input
         id="title"
@@ -50,7 +55,7 @@ const TicketUpsertForm = ({ ticket }: TicketUpsertFormProps) => {
         <div className="w-1/2">
           <Label htmlFor="deadline">Deadline</Label>
           <DatePicker
-            key={actionState.timestamp}
+            // key={actionState.timestamp}
             id="deadline"
             name="deadline"
             defaultValue={
